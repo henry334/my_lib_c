@@ -11,7 +11,7 @@ int size_arg(char *argv, int where, char *parse, int t)
 {
     int num = 0;
     int br = 0;
-    int size = my_strlen(argv, 127);
+    int size = my_strlen(parse, 127);
     for (; argv[where] != '\0'; where++, num++) {
         for (int c = 0; c < size && argv[where + c] != '\0'; c++) {
             argv[where + c] != parse[c] ? br = 0 : br++;

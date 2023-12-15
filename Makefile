@@ -35,7 +35,7 @@ SRC	=	lib/my/my_putchar.c \
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS =	-g
+CFLAGS =	-g3 -I./includes
 
 NAMELIB =	libmy.a
 
@@ -44,7 +44,7 @@ BINNAME	=	abin_test
 NAME	=	my_main.c
 
 all: libmy.a clean
-	@gcc -o $(BINNAME) $(NAME) -L ./lib/my -lmy
+	@gcc -o $(BINNAME) $(NAME) $(CFLAGS) -L ./lib/my -lmy
 	@echo "COMPILED: OK"
 
 libmy.a:
